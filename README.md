@@ -1,3 +1,46 @@
+> ## OpeningDesign fork
+>
+> This is [OpeningDesign](https://github.com/OpeningDesign)'s fork of
+> [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw), maintained to
+> carry editor changes needed by
+> **[SketchSpace](https://github.com/OpeningDesign/SketchSpace)** — a self-hosted,
+> collaborative, multi-page redlining tool for AEC, used to mark up evolving
+> construction documents.
+>
+> **Work lives on the [`SketchSpace`](https://github.com/OpeningDesign/excalidraw/tree/SketchSpace)
+> branch**, which is this fork's default. `master` is kept as an untouched mirror
+> of upstream, so `git log master..SketchSpace` is exactly what we have changed.
+>
+> ### Where this is heading
+>
+> Excalidraw is an excellent drawing surface; the AEC work happens around it.
+> Changes here are the ones that have to live *inside* the editor:
+>
+> - **Input and ergonomics for drafting** — e.g. an opt-in mouse-wheel zoom
+>   preference, so the wheel behaves the way it does in CAD.
+> - **Multi-page and sheet-set support**, since a drawing set is many sheets and
+>   upstream has [deferred pages](https://github.com/excalidraw/excalidraw/issues/9596#issuecomment-2922623255)
+>   in favour of Excalidraw+ scenes.
+> - **Anchoring annotations to model data**, so a redline can hang off an IFC
+>   GlobalId and survive a drawing being regenerated from the model.
+> - **openBIM interoperability** — [Bonsai](https://bonsaibim.org/) sheet layouts,
+>   IFC, and BCF as the exchange format for markup.
+>
+> ### Relationship to upstream
+>
+> We are not trying to land everything upstream; this fork exists so the work can
+> move at the pace the AEC use case needs. Individual changes may still be offered
+> where they are generally useful — the wheel-zoom preference is open as
+> [excalidraw#12051](https://github.com/excalidraw/excalidraw/pull/12051).
+>
+> **Please file Excalidraw bugs and feature requests
+> [upstream](https://github.com/excalidraw/excalidraw/issues)**, not here. Issues
+> in this repo should be about the SketchSpace-specific changes above.
+>
+> Everything below is upstream's README, unchanged.
+
+---
+
 <a href="https://excalidraw.com/" target="_blank" rel="noopener">
   <picture>
     <source media="(prefers-color-scheme: dark)" alt="Excalidraw" srcset="https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github/excalidraw_github_cover_2_dark.png" />
