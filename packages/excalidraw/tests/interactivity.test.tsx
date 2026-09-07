@@ -1663,8 +1663,16 @@ describe("wheelBehavior preference", () => {
     await render(<Excalidraw />);
   });
 
-  it("defaults to `scroll` — plain wheel pans, ctrl+wheel zooms", () => {
-    expect(h.state.wheelBehavior).toBe("scroll");
+  // OpeningDesign fork defaults to `zoom`; upstream defaults to `scroll`.
+  it("defaults to `zoom` — plain wheel zooms", () => {
+    expect(h.state.wheelBehavior).toBe("zoom");
+
+    plainWheel({ deltaY: -100 });
+    expect(h.state.zoom.value).toBeGreaterThan(1);
+  });
+
+  it("`scroll` — plain wheel pans, ctrl+wheel zooms", () => {
+    setWheelBehavior("scroll");
 
     plainWheel({ deltaX: 30, deltaY: 40 });
     expect(h.state.zoom.value).toBe(1);

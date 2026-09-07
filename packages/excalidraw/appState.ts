@@ -130,7 +130,11 @@ export const getDefaultAppState = (): Omit<
     activeLockedId: null,
     bindMode: "orbit",
     boxSelectionMode: "contain",
-    wheelBehavior: "scroll",
+    // OpeningDesign fork: defaults to "zoom". Upstream defaults to "scroll" to
+    // preserve existing behaviour; here the audience is drafting in CAD-like
+    // tools where the wheel zooms, so that is the sensible default. Users can
+    // still switch it under Preferences, and a persisted choice always wins.
+    wheelBehavior: "zoom",
     colorTopPicks: {
       elementStroke: null,
       elementBackground: null,
