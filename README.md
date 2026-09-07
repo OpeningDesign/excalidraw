@@ -37,6 +37,9 @@
 > [upstream](https://github.com/excalidraw/excalidraw/issues)**, not here. Issues
 > in this repo should be about the SketchSpace-specific changes above.
 >
+> See **[NOTES.md](NOTES.md)** for lessons from working inside the editor and
+> the roadmap for this fork.
+>
 > Everything below is upstream's README, unchanged.
 
 ---
